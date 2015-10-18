@@ -8,11 +8,26 @@ CREATE TABLE tipos_frecuencias(
     PRIMARY KEY(id)
 )ENGINE InnoDB DEFAULT CHARACTER SET=utf8;
 
+INSERT INTO tipos_frecuencias(nombre) VALUES 
+    ("1 vez al día"),
+    ("1 vez a la semana"),
+    ("2 veces por semana"),
+    ("3 veces por semana"),
+    ("4 veces por semana"),
+    ("5 veces por semana");
+
 CREATE TABLE tipos_comidas(
     id INT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(30) NOT NULL,
     PRIMARY KEY(id)
 )ENGINE InnoDB DEFAULT CHARACTER SET=utf8;
+
+INSERT INTO tipos_comidas(nombre) VALUES 
+    ("Desayuno"),
+    ("Almuerzo"),
+    ("Merienda"),
+    ("Cena"),
+    ("Colación");
 
 CREATE TABLE tipos_unidades(
     id INT NOT NULL AUTO_INCREMENT,
@@ -20,11 +35,23 @@ CREATE TABLE tipos_unidades(
     PRIMARY KEY(id)
 )ENGINE InnoDB DEFAULT CHARACTER SET=utf8;
 
+INSERT INTO tipos_unidades(nombre) VALUES 
+    ("Unidades"),
+    ("Gramos"),
+    ("Litros");
+
 CREATE TABLE familias(
     id INT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(30) NOT NULL,
     PRIMARY KEY(id)
 )ENGINE InnoDB DEFAULT CHARACTER SET=utf8;
+
+INSERT INTO familias(nombre) VALUES 
+    ("Carnes"),
+    ("Frutas"),
+    ("Vegetales"),
+    ("Cereales"),
+    ("Lácteos");
 
 CREATE TABLE alimentos(
     id INT NOT NULL AUTO_INCREMENT,
@@ -66,7 +93,7 @@ CREATE TABLE alimentos_x_dieta(
     id_dieta INT NOT NULL,
     id_alimento_patron INT NOT NULL,
     id_tipo_frecuencia INT NOT NULL,
-    cantidad INT NOT NULL, /* cantidad de veces que está la cantidad definia en patrón */
+    cantidad INT NOT NULL, /* cantidad de veces que está la cantidad definida en patrón */
     PRIMARY KEY(id),
     FOREIGN KEY(id_dieta) REFERENCES dietas(id),
     FOREIGN KEY(id_alimento_patron) REFERENCES alimentos_patron(id),

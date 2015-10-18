@@ -5,17 +5,24 @@
 body{
     min-width: 960px;
     background-color: #FAFAFA;
+    font-family: 'Roboto',sans-serif;
 }
 #contenedor{
     width: 940px;
     margin: 0px auto;
     background-color: #fff;
+    border:1px solid #000;
 }
 header{
     width: 100%;
-    background-color: #00E676;
+    background-color: #388E3C;/* green 700 */
     min-height: 60px;
 }
+#tituloSitio{
+    color:#fff;
+    padding: 10px;
+}
+/* light blue 300 #4FC3F7*/
 main{
     width: 100%;
     background-color: #fff;
@@ -23,6 +30,6 @@ main{
 }
 footer{
     width: 100%;
-    background-color: #1B5E20;
+    background-color: #1B5E20;/* green 900 */
     min-height: 60px;
 }
